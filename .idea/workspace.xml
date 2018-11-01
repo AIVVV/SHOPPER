@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24513f29-89e4-4485-96cb-348f72a1b05d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/SHOP_OVER.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -129,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1541059232386</updated>
-      <workItem from="1541059235284" duration="281000" />
+      <workItem from="1541059235284" duration="434000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1541059424557</created>
@@ -142,7 +137,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281000" />
+    <option name="totallyTimeSpent" value="434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="503" y="91" width="2057" height="1268" extended-state="0" />
