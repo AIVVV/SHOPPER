@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './customModules/Layout/Layout-component';
-import Wrapper from './customModules/Common/HOCs/Wrapper';
+import Wrapper from './customModules/Common/components/Wrapper';
 
 import './customStyles/App.scss';
 
