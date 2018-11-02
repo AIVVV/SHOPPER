@@ -1,17 +1,22 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import createHistory from 'history/createBrowserHistory';
+
 import Layout from './customModules/Layout/Layout-component';
-import Wrapper from './customModules/Common/components/Wrapper';
+import initStore from './reduxResources/createStore';
 
 import './customStyles/App.scss';
 
-class App extends React.Component {
-    render() {
-        return (
-            <Wrapper>
-                <Layout />
-            </Wrapper>
-        );
-    }
-}
+const history = createHistory();
+const store = initStore(history);
 
-export default App;
+export default function App() {
+    return (
+        <Provider store={store}>
+            <ConnectedRouter history={history}>
+                <Layout />
+            </ConnectedRouter>
+        </Provider>
+    );
+}
