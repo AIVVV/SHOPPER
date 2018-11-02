@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Body from './Body';
-import Navigation from './Nav';
+import Nav from './Nav/navigation-container';
 
 class Layout extends React.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class Layout extends React.Component {
     render() {
         return (
             <div>
-                <Navigation />
+                <Nav />
                 <Body />
             </div>
         );

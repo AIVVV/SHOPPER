@@ -1,5 +1,6 @@
 // Add all routes information here - staticPaths, routePaths, routingActions, routingHelpers and more....
-import { push, goBack } from 'connected-react-router';
+// import { push, goBack } from 'connected-react-router';
+import { push, goBack } from 'react-router-redux';
 
 export const staticRoutePaths = {
     HOME: '/',
@@ -19,7 +20,7 @@ export const RoutePaths = Object.freeze({
 
 export const RoutingActions = Object.freeze({
     toHome: () => push(RoutePaths.HOME()),
-    toAbooutUs: () => push(RoutePaths.ABOUT_US()),
+    toAboutUs: () => push(RoutePaths.ABOUT_US()),
     toSupport: () => push(RoutePaths.SUPPORT()),
     toHelp: () => push(RoutePaths.HELP()),
     toContactUs: () => push(RoutePaths.CONTACT_US())
