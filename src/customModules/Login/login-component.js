@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+
+
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {}
     }
 
     render() {
-        return <div>Login page</div>;
+        return(
+            <Fragment>
+                ala bala
+            </Fragment>
+        )
     }
 }
 

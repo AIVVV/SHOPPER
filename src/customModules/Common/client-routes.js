@@ -1,7 +1,9 @@
 // Add all routes information here - staticPaths, routePaths, routingActions, routingHelpers and more....
-import { push, goBack } from 'connected-react-router';
+import { push } from 'connected-react-router';
 
-export const staticRoutePaths = {
+export const StaticRoutePaths = {
+    LOGIN: '/login',
+    REGISTRATION: 'sing-up',
     HOME: '/',
     ABOUT_US: '/about-us',
     SUPPORT: '/support',
@@ -10,11 +12,13 @@ export const staticRoutePaths = {
 };
 
 export const RoutePaths = Object.freeze({
-    HOME: () => staticRoutePaths.HOME,
-    ABOUT_US: () => staticRoutePaths.ABOUT_US,
-    SUPPORT: () => staticRoutePaths.SUPPORT,
-    HELP: () => staticRoutePaths.HELP,
-    CONTACT_US: () => staticRoutePaths.CONTACT_US
+    LOGIN: () => StaticRoutePaths.LOGIN,
+    REGISTRATION: () => StaticRoutePaths.REGISTRATION,
+    HOME: () => StaticRoutePaths.HOME,
+    ABOUT_US: () => StaticRoutePaths.ABOUT_US,
+    SUPPORT: () => StaticRoutePaths.SUPPORT,
+    HELP: () => StaticRoutePaths.HELP,
+    CONTACT_US: () => StaticRoutePaths.CONTACT_US
 });
 
 export const RoutingActions = Object.freeze({
