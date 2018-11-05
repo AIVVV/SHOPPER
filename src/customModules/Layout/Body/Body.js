@@ -50,7 +50,7 @@ class Body extends React.Component {
                     <Grid container spacing={24}>
                         <Grid item xs={6}>
                             <Paper className={classes.card}>
-                                <Grid container xs={12} spacing={16}>
+                                <Grid container spacing={16}>
                                     <Grid item>
                                         <ButtonBase className={classes.image}>
                                             <img className={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
@@ -80,7 +80,7 @@ class Body extends React.Component {
 
                         <Grid item xs={6}>
                             <Paper className={classes.card}>
-                                <Grid container xs={12} spacing={16}>
+                                <Grid container spacing={16}>
                                     <Grid item>
                                         <ButtonBase className={classes.image}>
                                             <img className={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
