@@ -1,9 +1,8 @@
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Navigation from './navigation-component';
 
-import { RoutingActions } from '../../Common/client-routes';
+import { RoutingActions } from '../Common/client-routes';
 
 const mapDispatchToProps = dispatch =>
     bindActionCreators(

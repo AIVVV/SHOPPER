@@ -18,7 +18,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Input from '@material-ui/core/Input';
 import Paper from '@material-ui/core/Paper';
 
-
 const styles = theme => ({
     root: {
         display: 'flex',

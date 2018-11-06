@@ -7,7 +7,7 @@ import Layout from './customModules/Layout/Layout-component';
 import initStore from './reduxResources/createStore';
 
 import './customStyles/App.scss';
-import './customStyles/Navigation.scss';
+import './customStyles/navigation.scss';
 
 const history = createHistory();
 const store = initStore(history);

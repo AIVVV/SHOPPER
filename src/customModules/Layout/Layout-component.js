@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Body from './Body/Body';
-import Nav from './Nav/navigation-container';
+import Body from './Body';
+import Nav from '../Navigation/navigation-container';
 
 class Layout extends React.Component {
     constructor(props) {

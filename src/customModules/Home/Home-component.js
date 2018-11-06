@@ -1,5 +1,4 @@
 import React from 'react';
-import * as Pages from '../../../customPages/Pages';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -32,7 +31,7 @@ const styles = theme => ({
     },
 });
 
-class Body extends React.Component {
+class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -114,8 +113,8 @@ class Body extends React.Component {
     }
 }
 
-Body.propTypes = {
+Home.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, {withTheme: true})(Body);
+export default withStyles(styles, {withTheme: true})(Home);
