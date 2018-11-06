@@ -3,7 +3,7 @@ import { push } from 'connected-react-router';
 
 export const StaticRoutePaths = {
     LOGIN: '/login',
-    REGISTRATION: 'sing-up',
+    REGISTRATION: '/sing-up',
     HOME: '/',
     ABOUT_US: '/about-us',
     SUPPORT: '/support',

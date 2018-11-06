@@ -2,9 +2,6 @@ import React, { Fragment } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
-
-import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -26,50 +23,11 @@ const buttonProps = {
     color: 'primary'
 };
 
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        height: '100vh'
-    },
-
-    container: {
-        width: '100%',
-        height: '100%'
-    },
-
-    item: {
-        width: '100%'
-    },
-
-    leftMargin: {
-        marginLeft: 10
-    },
-
-    rightMargin: {
-        marginRight: 10
-    },
-
-    paper: {
-        padding: 25,
-        marginBottom: 25
-    },
-
-    formElement: {
-        marginTop: 0,
-        marginBottom: 25,
-        width: '100%'
-    },
-
-    checkBox: {
-        paddingLeft: 0
-    }
-});
-
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            checkBox: false
+            checkValue: false
         };
     }
 
@@ -80,24 +38,24 @@ class Login extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
         const { directionRow, directionColumn, justify, justifyStart, alignItems } = flexProps;
         const { variant, size, color } = buttonProps;
         return (
             <Fragment>
-                <Grid container className={classes.root}>
-                    <Grid item lg={1} xs={0} />
-                    <Grid item lg={12} xs={12}>
-                        <Grid container className={classes.container}>
-                            <Grid item className={classes.item}>
-                                <Paper className={classes.paper} square elevation={4}>
+                <Grid container className="loginContainer">
+                    <Grid item lg={3} md={2} xs={1} />
+                    <Grid item lg={6} md={8} xs={10}>
+                        <Grid container className="container" direction={directionColumn} justify={justify}>
+                            <Grid item className="containerItem">
+                                <Paper className="paperContainer" square elevation={4}>
                                     <Grid container>
-                                        <Grid item xs={10}>
-                                            <Typography variant="h5">Log In To Explore mode</Typography>
-                                            <form action="#">
+                                        <Grid item md={2} xs={0}/>
+                                        <Grid item md={8} xs={12}>
+                                            <Typography className="mBottom15" variant="h5">Log In To Explore mode</Typography>
+                                            <form action="#" className="loginForm">
                                                 <TextField
                                                     id="email"
-                                                    className={classes.formElement}
+                                                    className="textField"
                                                     label="E-mail"
                                                     placeholder="Enter your E-mail"
                                                     margin="normal"
@@ -105,26 +63,24 @@ class Login extends React.Component {
                                                 <br />
                                                 <TextField
                                                     id="Password"
-                                                    className={[classes.formElement, classes.mBottom].join(' ')}
+                                                    className="textField"
                                                     label="Password"
                                                     placeholder="Enter your Password"
                                                     margin="normal"
                                                 />
-                                                <Button variant={variant} size={size} color={color} className={classes.formElement}>
+                                                <Button variant={variant} size={size} color={color} className="button">
                                                     Login
                                                 </Button>
                                             </form>
-                                        </Grid>
-                                        <Grid item xs={10}>
                                             <Typography>
                                                 <Link to="#">Forgot Password?</Link>
                                             </Typography>
                                             <Grid container direction={directionRow} justify={justifyStart} alignItems={alignItems}>
                                                 <Grid item>
                                                     <Checkbox
-                                                        className={classes.checkBox}
-                                                        checked={this.state.checkBox}
-                                                        onChange={this.handleCheckBox('checkBox')}
+                                                        className="checkBox"
+                                                        checked={this.state.checkValue}
+                                                        onChange={this.handleCheckBox('checkValue')}
                                                         value="rememberMe"
                                                         color="primary"
                                                     />
@@ -134,19 +90,23 @@ class Login extends React.Component {
                                                 </Grid>
                                             </Grid>
                                         </Grid>
+                                        <Grid item md={2} xs={0}/>
                                     </Grid>
                                 </Paper>
                             </Grid>
-                            <Grid item className={classes.item}>
-                                <Paper className={classes.paper} square elevation={4}>
+                            <Grid item className="containerItem">
+                                <Paper className="paperContainer" square elevation={4}>
                                     <Grid container direction={directionColumn} justify={justify} alignItems={alignItems}>
                                         <Grid item xs={12}>
-                                            <Button variant={variant} size={size} color={color} className={classes.formElement}>
+                                            <Button variant={variant} size={size} color={color} className="button">
                                                 Login with Google
                                             </Button>
-                                            <Button variant={variant} size={size} color={color} className={classes.formElement}>
+                                            <Button variant={variant} size={size} color={color} className="button">
                                                 Login with Facebook
                                             </Button>
+                                            <Typography>
+                                                Do you have an account? <Link to="#"> Sing up</Link>
+                                            </Typography>
                                         </Grid>
                                         <Grid item xs={12} />
                                     </Grid>
@@ -154,15 +114,13 @@ class Login extends React.Component {
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Grid item lg={1} xs={0} />
+                    <Grid item lg={3} md={2} xs={1} />
                 </Grid>
             </Fragment>
         );
     }
 }
 
-Login.propTypes = {
-    classes: PropTypes.object.isRequired
-};
+export default Login;
 
-export default withStyles(styles)(Login);
+
