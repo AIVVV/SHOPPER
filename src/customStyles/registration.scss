@@ -1,3 +1,52 @@
 .registrationContainer {
+  flex-grow: 1;
+  height: 100vh;
+  .container {
+    width: 100%;
+    height: 100%;
+    .containerItem {
+      width: 100%;
+    }
+  }
+
+  .paperContainer {
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .userContainer {
+
+    @media only screen and (max-width: 960px) {
+      border-bottom: 1px solid $singUpBorder;
+    }
+  }
+  
+  .userContainer,
+  .partnerContainer {
+    padding: 10px;
+    -webkit-box-shadow: 0 0 10px $singUpBorder;
+    -moz-box-shadow: 0 0 10px $singUpBorder;
+    box-shadow: 0 0 10px $singUpBorder;
+
+    @media only screen and (max-width: 960px) {
+      padding: 20px 0;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+  }
+
+  .form {
+    padding: 10px;
+    .textField {
+      width: 100%;
+    }
+    .button {
+      width: 100%;
+    }
+  }
+  .singUpUserForm {}
+
 
 }

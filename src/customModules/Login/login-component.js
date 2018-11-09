@@ -52,7 +52,7 @@ class Login extends React.Component {
                                     <Grid container>
                                         <Grid item md={2} xs={0}/>
                                         <Grid item md={8} xs={12}>
-                                            <Typography className="mBottom15" variant="h5">Log In To Explore mode</Typography>
+                                            <Typography className="mBottom15" variant="h5" align="center">Log In</Typography>
                                             <form action="#" className="loginForm">
                                                 <TextField
                                                     id="email"

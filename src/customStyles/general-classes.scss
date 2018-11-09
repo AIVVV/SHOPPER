@@ -1,10 +1,10 @@
 /********* margin-bottom *********/
 .mBottom5 {
-  margin-bottom: 5px;
+  margin-bottom: 5px !important;
 }
 
 .mBottom10 {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 
 .mBottom15 {
@@ -12,7 +12,7 @@
 }
 
 .mBottom20 {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 /********* margin-top *********/
@@ -32,6 +32,41 @@
   margin-top: 20px;
 }
 
+/********* margin-left *********/
+.mLeft5 {
+  margin-left: 5px;
+}
+
+.mLeft10 {
+  margin-left: 10px;
+}
+
+.mLeft15 {
+  margin-left: 15px;
+}
+
+.mLeft20 {
+  margin-left: 20px;
+}
+
+/********* margin-right *********/
+.mRight5 {
+  margin-right: 5px;
+}
+
+.mRight10 {
+  margin-right: 10px;
+}
+
+.mRight15 {
+  margin-right: 15px;
+}
+
+.mRight20 {
+  margin-right: 20px;
+}
+
+
 /********* padding-bottom *********/
 .pBottom5 {
   padding-bottom: 5px;
@@ -49,7 +84,7 @@
   padding-bottom: 20px;
 }
 
-/********* margin-top *********/
+/********* padding-top *********/
 .pTop5 {
   padding-top: 5px;
 }
