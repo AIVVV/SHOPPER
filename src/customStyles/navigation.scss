@@ -1,0 +1,65 @@
+.navigation-wrapper {
+
+}
+
+.main-menu {
+  background-color: inherit !important;
+  span {
+    color: #fff;
+  }
+}
+
+.profile-elements {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 35px;
+  .bookings-chat-icons-wrapper {
+    color: red;
+  }
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  .user-name-and-status {
+    line-height: 26px;
+    font-size: 1.2em;
+    .online-status {
+      position: relative;
+      padding: 0 12px;
+      font-size: 0.8em;
+      line-height: 17px;
+      &:after {
+        position: absolute;
+        content: ' ';
+        width: 8px;
+        height: 8px;
+        top: 3px;
+        left: 0;
+        background-color: green;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.search-wrapper {
+  background-color: #fff !important;
+  color: #000 !important;
+  .search-icon {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .search-input {
+    width: 90%;
+    color: inherit;
+    padding-left: 32px;
+    background-color: #ebebeb;
+    border-radius: 3px;
+  }
+}
