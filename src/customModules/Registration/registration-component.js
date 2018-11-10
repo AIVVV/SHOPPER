@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-import Form from './components/Form';
-import * as Settings from './form-settings';
+import Form from '../Common/components/Form';
+import * as Settings from '../Common/form-settings';
 
 const flexProps = {
   directionRow: 'row',

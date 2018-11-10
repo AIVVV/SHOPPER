@@ -1,4 +1,5 @@
 export const User = {
+  formId:'userForm',
   fields: [
     {
       id: 'username',
@@ -55,6 +56,7 @@ export const User = {
 };
 
 export const Shoper = {
+    formId:'shoperForm',
   fields: [
     {
       id: 'partnername',
@@ -104,4 +106,33 @@ export const Shoper = {
       name: 'Submit'
     }
   ]
+};
+
+export const Login = {
+    formId:'loginForm',
+    fields: [
+        {
+            id: 'email',
+            className: 'textField',
+            label: 'Email',
+            placeholder: 'Enter E-mail',
+            margin: 'normal'
+        },
+        {
+            id: 'password',
+            className: 'textField mBottom20',
+            label: 'Password',
+            placeholder: 'Enter Password',
+            margin: 'normal'
+        },
+    ],
+    buttons: [
+        {
+            variant: 'contained',
+            size: 'large',
+            color: 'primary',
+            className: 'button mBottom20',
+            name: 'Login'
+        }
+    ]
 };

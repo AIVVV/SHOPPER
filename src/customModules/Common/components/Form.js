@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const Form = ({ fields, buttons }) => (
-  <form action="#" className="form singUpUserForm">
+const Form = ({formId, fields, buttons }) => (
+  <form action="#" className="Form" id={formId}>
     {fields.map(field => {
       return (
         <Fragment>

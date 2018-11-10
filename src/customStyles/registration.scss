@@ -21,7 +21,7 @@
   }
   
   .userContainer {
-    padding: 15px;
+    padding: 30px;
     @media only screen and (max-width: 959px) {
       padding: 25px;
       margin-bottom: 50px;
@@ -29,19 +29,9 @@
   }
 
   .partnerContainer {
-    padding: 15px;
+    padding: 30px;
     @media only screen and (max-width: 959px) {
       padding: 25px;
-    }
-  }
-
-  .form {
-    padding: 10px;
-    .textField {
-      width: 100%;
-    }
-    .button {
-      width: 100%;
     }
   }
 }
