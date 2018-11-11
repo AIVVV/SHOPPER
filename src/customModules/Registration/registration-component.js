@@ -36,7 +36,7 @@ class Registration extends React.Component {
               alignItems={alignItems}
               justify={justify}
             >
-              <Grid md={5} xs={12} item className="containerItem">
+              <Grid item md={5} xs={12} item className="containerItem">
                 <Paper className="userContainer" square elevation={4}>
                   <Typography className="mBottom15" variant="h5" align="center">
                     Sing up as a User
@@ -44,8 +44,8 @@ class Registration extends React.Component {
                   <Form {...Settings.User} />
                 </Paper>
               </Grid>
-              <Grid md={1} xs={0} />
-              <Grid md={5} xs={12} item className="containerItem">
+              <Grid item md={1}/>
+              <Grid item md={5} xs={12} item className="containerItem">
                 <Paper className="partnerContainer" square elevation={4}>
                   <Typography className="mBottom15" variant="h5" align="center">
                     Sing up as Shoper with us

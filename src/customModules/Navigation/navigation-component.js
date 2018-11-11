@@ -51,7 +51,6 @@ class Navigation extends React.Component {
     };
 
     render() {
-        console.log(this);
         const { classes } = this.props;
 
         return (

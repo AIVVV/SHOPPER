@@ -6,7 +6,7 @@ const Form = ({formId, fields, buttons }) => (
   <form action="#" className="Form" id={formId}>
     {fields.map(field => {
       return (
-        <Fragment>
+        <Fragment key={field.id}>
           {field.multiline ? (
             <TextField
               multiline
@@ -35,6 +35,7 @@ const Form = ({formId, fields, buttons }) => (
     {buttons.map(button => {
       return (
         <Button
+          key={button.name}
           variant={button.variant}
           size={button.size}
           color={button.color}

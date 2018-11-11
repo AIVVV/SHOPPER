@@ -51,7 +51,7 @@ class Login extends React.Component {
                             <Grid item className="containerItem">
                                 <Paper className="paperContainer" square elevation={4}>
                                     <Grid container>
-                                        <Grid item md={2} xs={0}/>
+                                        <Grid item md={2}/>
                                         <Grid item md={8} xs={12}>
                                             <Typography className="mBottom15" variant="h5" align="center">Log In</Typography>
                                             <Form {...Settings.Login}/>
@@ -73,7 +73,7 @@ class Login extends React.Component {
                                                 </Grid>
                                             </Grid>
                                         </Grid>
-                                        <Grid item md={2} xs={0}/>
+                                        <Grid item md={2}/>
                                     </Grid>
                                 </Paper>
                             </Grid>

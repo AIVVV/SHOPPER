@@ -4,7 +4,8 @@ import { push, goBack } from 'react-router-redux';
 
 export const StaticRoutePaths = {
     LOGIN: '/login',
-    REGISTRATION: '/sing-up',
+    REGISTRATION: '/login/sing-up',
+    FORGOT_PASSWORD: 'login/forgot-password',
     HOME: '/',
     ABOUT_US: '/about-us',
     SUPPORT: '/support',
@@ -15,6 +16,7 @@ export const StaticRoutePaths = {
 export const RoutePaths = Object.freeze({
     LOGIN: () => StaticRoutePaths.LOGIN,
     REGISTRATION: () => StaticRoutePaths.REGISTRATION,
+    FORGOT_PASSWORD: () => StaticRoutePaths.REGISTRATION,
     HOME: () => StaticRoutePaths.HOME,
     ABOUT_US: () => StaticRoutePaths.ABOUT_US,
     SUPPORT: () => StaticRoutePaths.SUPPORT,
@@ -23,6 +25,9 @@ export const RoutePaths = Object.freeze({
 });
 
 export const RoutingActions = Object.freeze({
+    toLogin: () => push(RoutePaths.LOGIN()),
+    toRegistration: () => push(RoutePaths.REGISTRATION()),
+    toResetPassword: () => push(RoutePaths.FORGOT_PASSWORD()),
     toHome: () => push(RoutePaths.HOME()),
     toAboutUs: () => push(RoutePaths.ABOUT_US()),
     toSupport: () => push(RoutePaths.SUPPORT()),
