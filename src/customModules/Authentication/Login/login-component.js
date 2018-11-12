@@ -2,11 +2,11 @@ import React, { Fragment } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Checkbox from '@material-ui/core/Checkbox';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { Paper } from '@material-ui/core/Paper';
+import { Grid } from '@material-ui/core/Grid';
+import  { Checkbox } from '@material-ui/core/Checkbox';
+import  { Button } from '@material-ui/core/Button';
+import { Typography } from '@material-ui/core/Typography';
 
 import Form from '../../Common/components/Form';
 import * as Settings from '../../Common/form-settings';

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
+
 
 import Grid from '@material-ui/core/Grid';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -16,7 +17,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Input from '@material-ui/core/Input';
-import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
     root: {
@@ -54,8 +54,8 @@ class Navigation extends React.Component {
         const { classes } = this.props;
 
         return (
-            <div>
-                <AppBar className="navigation-wrapper" position="static">
+            <Fragment>
+                <AppBar className="navigation-wrapper" position="static" color="default">
                     <Toolbar>
                         <Grid container spacing={24}>
                             <Grid item xs={6}>
@@ -124,7 +124,7 @@ class Navigation extends React.Component {
                         </Grid>
                     </Toolbar>
                 </AppBar>
-            </div>
+            </Fragment>
         );
     }
 }

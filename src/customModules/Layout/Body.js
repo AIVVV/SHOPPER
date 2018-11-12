@@ -9,7 +9,7 @@ class Body extends React.Component {
       <Switch>
         <Route exact path={StaticRoutePaths.LOGIN} render={() => <Pages.LoginPage />}/>
         <Route exact path={StaticRoutePaths.REGISTRATION} render={()=> <Pages.RegistrationPage/>}/>
-        <Route path={StaticRoutePaths.HOME} exact render={() => <Pages.HomePage />} />
+        <Route exact path={StaticRoutePaths.HOME} render={() => <Pages.HomePage />} />
       </Switch>
     );
   }

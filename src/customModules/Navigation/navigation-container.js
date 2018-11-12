@@ -15,10 +15,4 @@ const mapDispatchToProps = dispatch =>
         }, dispatch
     );
 
-// const mapStateToProps = state => {
-//     return {
-//
-//     };
-// };
-
 export default connect(null, mapDispatchToProps)(Navigation);

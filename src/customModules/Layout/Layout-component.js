@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Body from './Body';
-// import Nav from '../Navigation/navigation-container';
+import Nav from '../Navigation/navigation-container';
 
 class Layout extends React.Component {
     constructor(props) {
@@ -10,10 +10,10 @@ class Layout extends React.Component {
     }
     render() {
         return (
-            <div>
-                {/*<Nav />*/}
-                <Body />
-            </div>
+            <Fragment>
+                <Nav />
+                {/*<Body />*/}
+            </Fragment>
         );
     }
 }
