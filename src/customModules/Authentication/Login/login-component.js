@@ -1,12 +1,7 @@
 import React, { Fragment } from 'react';
 
 import { Link } from 'react-router-dom';
-
-import { Paper } from '@material-ui/core/Paper';
-import { Grid } from '@material-ui/core/Grid';
-import  { Checkbox } from '@material-ui/core/Checkbox';
-import  { Button } from '@material-ui/core/Button';
-import { Typography } from '@material-ui/core/Typography';
+import { Paper, Grid, Typography, Checkbox, Button } from '@material-ui/core';
 
 import Form from '../../Common/components/Form';
 import * as Settings from '../../Common/form-settings';
@@ -51,10 +46,12 @@ class Login extends React.Component {
                             <Grid item className="containerItem">
                                 <Paper className="paperContainer" square elevation={4}>
                                     <Grid container>
-                                        <Grid item md={2}/>
+                                        <Grid item md={2} />
                                         <Grid item md={8} xs={12}>
-                                            <Typography className="mBottom15" variant="h5" align="center">Log In</Typography>
-                                            <Form {...Settings.Login}/>
+                                            <Typography className="mBottom15" variant="h5" align="center">
+                                                Log In
+                                            </Typography>
+                                            <Form {...Settings.Login} />
                                             <Typography>
                                                 <Link to="#">Forgot Password?</Link>
                                             </Typography>
@@ -73,7 +70,7 @@ class Login extends React.Component {
                                                 </Grid>
                                             </Grid>
                                         </Grid>
-                                        <Grid item md={2}/>
+                                        <Grid item md={2} />
                                     </Grid>
                                 </Paper>
                             </Grid>
@@ -107,5 +104,3 @@ class Login extends React.Component {
 }
 
 export default Login;
-
-
