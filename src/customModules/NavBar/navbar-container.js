@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Navigation from './navigation-component';
+import NavBar from './navbar-component';
 
 import { RoutingActions } from '../Common/client-routes';
 
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch =>
         }, dispatch
     );
 
-export default connect(null, mapDispatchToProps)(Navigation);
+export default connect(null, mapDispatchToProps)(NavBar);
