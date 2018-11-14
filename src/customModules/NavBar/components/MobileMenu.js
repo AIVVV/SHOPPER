@@ -1,92 +1,61 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
-import { withStyles } from '@material-ui/core/styles';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-const styles = theme => ({
-    root: {
-        display: 'flex',
-    },
-    paper: {
-        marginRight: theme.spacing.unit * 2,
-    },
-});
+import * as Settings from '../../Common/menu-settings';
+import Tabs from "@material-ui/core/Tabs/Tabs";
 
-class MenuListComposition extends React.Component {
-    state = {
-        open: false,
+class MobileMenu extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            anchorEl: null,
+            MenuItemValue: null
+        };
+    }
+
+    handleClick = event => {
+        this.setState({ anchorEl: event.currentTarget });
     };
 
-    handleToggle = () => {
-        this.setState(state => ({ open: !state.open }));
-    };
-
-    handleClose = event => {
-        if (this.anchorEl.contains(event.target)) {
-            return;
-        }
-
-        this.setState({ open: false });
+    handleClose = () => {
+        this.setState({ anchorEl: null });
     };
 
     render() {
-        const { classes } = this.props;
-        const { open } = this.state;
+        const { anchorEl } = this.state;
+        const { buttons } = Settings.MobileMenu;
+        const open = Boolean(anchorEl);
 
         return (
-            <div className={classes.root}>
-                <Paper className={classes.paper}>
-                    <MenuList>
-                        <MenuItem>Profile</MenuItem>
-                        <MenuItem>My account</MenuItem>
-                        <MenuItem>Logout</MenuItem>
-                    </MenuList>
-                </Paper>
-                <div>
-                    <Button
-                        buttonRef={node => {
-                            this.anchorEl = node;
-                        }}
-                        aria-owns={open ? 'menu-list-grow' : undefined}
-                        aria-haspopup="true"
-                        onClick={this.handleToggle}
-                    >
-                        Toggle Menu Grow
-                    </Button>
-                    <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
-                        {({ TransitionProps, placement }) => (
-                            <Grow
-                                {...TransitionProps}
-                                id="menu-list-grow"
-                                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-                            >
-                                <Paper>
-                                    <ClickAwayListener onClickAway={this.handleClose}>
-                                        <MenuList>
-                                            <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                                            <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                                            <MenuItem onClick={this.handleClose}>Logout</MenuItem>
-                                        </MenuList>
-                                    </ClickAwayListener>
-                                </Paper>
-                            </Grow>
-                        )}
-                    </Popper>
-                </div>
+            <div>
+                <IconButton
+                    aria-label="More"
+                    aria-owns={open ? 'long-menu' : undefined}
+                    aria-haspopup="true"
+                    onClick={this.handleClick}
+                    color="primary"
+                >
+                    <MoreVertIcon color="primary" />
+                </IconButton>
+                <Menu
+                    id="long-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={this.handleClose}
+                >
+                    {buttons.map(button => (
+                        <MenuItem className="" key={button.label} value={button.name} onClick={this.handleClose}>
+                            {button.name}
+                        </MenuItem>
+                    ))}
+                </Menu>
             </div>
         );
     }
 }
 
-MenuListComposition.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(MenuListComposition);
+export default MobileMenu;

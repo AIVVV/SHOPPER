@@ -1,22 +1,42 @@
 import React from 'react';
 
-import { MenuList, MenuItem } from '@material-ui/core';
-import  ListItemText from '@material-ui/core/ListItemText';
+import PropTypes from 'prop-types';
+
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
+import * as Settings from '../../Common/menu-settings';
 
 class WebMenu extends React.Component {
-    render() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0,
+    };
+  }
 
-        const { buttons } = this.props;
-        return(
-            <MenuList className="menu clearfix">
-                {buttons.map( button => (
-                    <MenuItem key={button.label} className='menu-item'>
-                        <ListItemText inset primary={button.name} className='menu-text'/>
-                    </MenuItem>
-                ))};
-            </MenuList>
-        )
-    }
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  render() {
+    const { buttons } = Settings.WebMenu;
+    return (
+      <Tabs
+        className="menu"
+        value={this.state.value}
+        onChange={this.handleChange}
+        indicatorColor="primary"
+        textColor="primary"
+      >
+        {buttons.map(button => (
+          <Tab className="menu-item" key={button.name} label={button.label} />
+        ))}
+      </Tabs>
+    );
+  }
 }
+
+WebMenu.propTypes = {};
 
 export default WebMenu;
