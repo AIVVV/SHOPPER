@@ -125,3 +125,13 @@
   height: 0;
   clear: both;
 }
+
+.grid-container {
+  flex-grow: 1;
+  height: 100%;
+
+}
+
+.grid-item-center {
+  text-align: center;
+}

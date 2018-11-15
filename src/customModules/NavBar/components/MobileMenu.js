@@ -1,61 +1,92 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import {
+  MenuList,
+  MenuItem,
+  ListItemText,
+  Button,
+  ClickAwayListener,
+  Grow,
+  Paper,
+  Popper,
+} from '@material-ui/core';
 
+import MenuIcon from '@material-ui/icons/Menu';
 import * as Settings from '../../Common/menu-settings';
-import Tabs from "@material-ui/core/Tabs/Tabs";
+
+const ButtonProps = {
+  variant: 'contained',
+  ariaLabel: 'Menu-button',
+  color: 'primary',
+};
 
 class MobileMenu extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            anchorEl: null,
-            MenuItemValue: null
-        };
-    }
-
-    handleClick = event => {
-        this.setState({ anchorEl: event.currentTarget });
+  constructor(props) {
+    super(props);
+    this.state = {
+      anchorEl: null,
+      MenuItemValue: null,
     };
+  }
 
-    handleClose = () => {
-        this.setState({ anchorEl: null });
-    };
+  handleClick = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
 
-    render() {
-        const { anchorEl } = this.state;
-        const { buttons } = Settings.MobileMenu;
-        const open = Boolean(anchorEl);
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
 
-        return (
-            <div>
-                <IconButton
-                    aria-label="More"
-                    aria-owns={open ? 'long-menu' : undefined}
-                    aria-haspopup="true"
-                    onClick={this.handleClick}
-                    color="primary"
-                >
-                    <MoreVertIcon color="primary" />
-                </IconButton>
-                <Menu
-                    id="long-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={this.handleClose}
-                >
+  render() {
+    const { anchorEl } = this.state;
+    const { buttons } = Settings.MobileMenu;
+    const { variant, ariaLabel, color } = ButtonProps;
+    const open = Boolean(anchorEl);
+
+    return (
+      <Fragment>
+        <Button
+          onClick={this.handleClick}
+          variant={variant}
+          aria-label={ariaLabel}
+          color={color}
+        >
+          <MenuIcon />
+        </Button>
+        <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              id="menu-list-grow"
+              style={{
+                transformOrigin:
+                  placement === 'bottom' ? 'center top' : 'center bottom',
+              }}
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={this.handleClose}>
+                  <MenuList className="menu-mobile">
                     {buttons.map(button => (
-                        <MenuItem className="" key={button.label} value={button.name} onClick={this.handleClose}>
-                            {button.name}
-                        </MenuItem>
+                      <MenuItem
+                        className="menu-item-mobile"
+                        key={button.label}
+                        value={button.name}
+                        onClick={this.handleClose}
+                      >
+                        <ListItemText className="menu-text-mobile">
+                          {button.name}
+                        </ListItemText>
+                      </MenuItem>
                     ))}
-                </Menu>
-            </div>
-        );
-    }
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+      </Fragment>
+    );
+  }
 }
 
 export default MobileMenu;

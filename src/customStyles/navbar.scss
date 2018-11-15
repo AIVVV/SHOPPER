@@ -1,12 +1,49 @@
-.navbar-container {
-  height: 100%;
+.navigation-bar {
+  .toolbar {
+    height: 80px;
+    .navigation {
+      height: 100%;
 
-  .menu {
-    height: 100%;
+      .menu-web {
+        height: 100%;
 
-    .menu-item {
-      min-width: 72px;
-      color: #3f51b5;
+        .menu-item-web {
+          min-width: 50px;
+          color: #3f51b5;
+        }
+      }
+
+      .menu-mobile {
+        width: 100%;
+
+        .menu-item-mobile {
+          text-align: center;
+          width: 200px;
+        }
+
+        .menu-text-mobile {
+          color: #3f51b5;
+          width: 50px;
+        }
+      }
+    }
+
+    .notifications {
+      height: 100%;
+
+      .book-button {
+        width: 80px;
+        @media only screen and (max-width: 959px) {
+          width: 50px;
+        }
+      }
+
+      .message-button {
+        width: 80px;
+        @media only screen and (max-width: 959px) {
+          width: 50px;
+        }
+      }
     }
   }
 }

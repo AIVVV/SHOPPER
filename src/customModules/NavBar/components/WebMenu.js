@@ -1,11 +1,14 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
-
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
 import * as Settings from '../../Common/menu-settings';
+
+const TabsProps = {
+  indicatorColor: 'primary',
+  textColor: 'primary',
+};
 
 class WebMenu extends React.Component {
   constructor(props) {
@@ -20,23 +23,26 @@ class WebMenu extends React.Component {
   };
 
   render() {
+    const { indicatorColor, textColor } = TabsProps;
     const { buttons } = Settings.WebMenu;
     return (
       <Tabs
-        className="menu"
+        className="menu-web"
         value={this.state.value}
         onChange={this.handleChange}
-        indicatorColor="primary"
-        textColor="primary"
+        indicatorColor={indicatorColor}
+        textColor={textColor}
       >
         {buttons.map(button => (
-          <Tab className="menu-item" key={button.name} label={button.label} />
+          <Tab
+            className="menu-item-web"
+            key={button.name}
+            label={button.label}
+          />
         ))}
       </Tabs>
     );
   }
 }
-
-WebMenu.propTypes = {};
 
 export default WebMenu;
