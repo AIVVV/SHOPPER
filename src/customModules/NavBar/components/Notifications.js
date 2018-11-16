@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import { Button, Grid } from '@material-ui/core';
 import MessageIcon from '@material-ui/icons/Message';
 import BookIcon from '@material-ui/icons/Book';
+import Badge from '@material-ui/core/Badge';
 
 const flexProps = {
   directionRow: 'row',
@@ -19,7 +20,10 @@ const ButtonProps = {
 class Notifications extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+        booksNotifications:'1',
+        messageNotifications: '2'
+    };
   }
 
   render() {
@@ -34,24 +38,28 @@ class Notifications extends React.Component {
         alignItems={alignItems}
       >
         <Grid item xs={6} className="grid-item-center">
-          <Button
-            className="book-button"
-            variant={variant}
-            size={size}
-            color={color}
-          >
-            <BookIcon />
-          </Button>
+          <Badge className="notification-badge" color="secondary" badgeContent={this.state.booksNotifications}>
+            <Button
+              className="book-button"
+              variant={variant}
+              size={size}
+              color={color}
+            >
+              <BookIcon />
+            </Button>
+          </Badge>
         </Grid>
         <Grid item xs={6} className="grid-item-center">
-          <Button
-            className="message-button"
-            variant={variant}
-            size={size}
-            color={color}
-          >
-            <MessageIcon />
-          </Button>
+          <Badge className="notification-badge" color="secondary" badgeContent={this.state.messageNotifications}>
+            <Button
+              className="message-button"
+              variant={variant}
+              size={size}
+              color={color}
+            >
+              <MessageIcon />
+            </Button>
+          </Badge>
         </Grid>
       </Grid>
     );

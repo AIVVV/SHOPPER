@@ -19,6 +19,7 @@ class WebMenu extends React.Component {
   }
 
   handleChange = (event, value) => {
+    console.log(value);
     this.setState({ value });
   };
 
@@ -38,6 +39,7 @@ class WebMenu extends React.Component {
             className="menu-item-web"
             key={button.name}
             label={button.label}
+            selected={true}
           />
         ))}
       </Tabs>
