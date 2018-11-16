@@ -1,47 +1,81 @@
+@import 'variables';
+
+.navigation {
+  width: 300px;
+  height: auto;
+}
+
 .navigation-bar {
   .toolbar {
     height: 80px;
-    .navigation {
-      height: 100%;
-
-      .menu-web {
-        height: 100%;
-
-        .menu-item-web {
-          min-width: 50px;
-          color: #3f51b5;
-        }
-      }
-
-      .menu-mobile {
-        width: 100%;
-
-        .menu-item-mobile {
-          text-align: center;
-          width: 200px;
-        }
-
-        .menu-text-mobile {
-          color: #3f51b5;
-          width: 50px;
-        }
-      }
-    }
 
     .notifications {
       height: 100%;
 
       .book-button {
-        width: 80px;
+        width: 100%;
         @media only screen and (max-width: 959px) {
           width: 50px;
         }
       }
 
       .message-button {
-        width: 80px;
+        width: 100%;
         @media only screen and (max-width: 959px) {
           width: 50px;
+        }
+      }
+    }
+
+    .elements {
+      display: flex;
+      justify-content: flex-end;
+      line-height: 35px;
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px 0 0;
+      }
+      .name-status-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .online {
+          position: relative;
+          padding: 0 12px;
+          font-size: 0.8em;
+          line-height: 17px;
+
+          &:after {
+            position: absolute;
+            content: ' ';
+            width: 8px;
+            height: 8px;
+            top: 3px;
+            left: 0;
+            background-color: $green;
+            border-radius: 50%;
+          }
+        }
+
+        .offline {
+          position: relative;
+          padding: 0 12px;
+          font-size: 0.8em;
+          line-height: 17px;
+
+          &:after {
+            position: absolute;
+            content: ' ';
+            width: 8px;
+            height: 8px;
+            top: 3px;
+            left: 0;
+            background-color: $offline;
+            border-radius: 50%;
+          }
         }
       }
     }

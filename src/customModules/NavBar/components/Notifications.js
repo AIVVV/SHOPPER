@@ -7,7 +7,7 @@ import Badge from '@material-ui/core/Badge';
 
 const flexProps = {
   directionRow: 'row',
-  justify: 'center',
+  justify: 'flex-end',
   alignItems: 'center',
 };
 
@@ -27,7 +27,7 @@ class Notifications extends React.Component {
   }
 
   render() {
-    const { directionRow, alignItems } = flexProps;
+    const { directionRow, alignItems, justify } = flexProps;
     const { variant, size, color } = ButtonProps;
 
     return (
@@ -36,6 +36,7 @@ class Notifications extends React.Component {
         className="grid-container"
         direction={directionRow}
         alignItems={alignItems}
+        justify={justify}
       >
         <Grid item xs={6} className="grid-item-center">
           <Badge className="notification-badge" color="secondary" badgeContent={this.state.booksNotifications}>

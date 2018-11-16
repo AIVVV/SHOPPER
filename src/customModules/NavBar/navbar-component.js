@@ -1,12 +1,10 @@
 import React from 'react';
 
-import { isMobile } from 'react-device-detect';
 import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
-import WebMenu from './components/WebMenu';
-import MobileMenu from './components/MobileMenu';
+import MenuDrawer from './components/Menu';
 import Notifications from './components/Notifications';
 import Profile from './components/Profile';
 
@@ -23,24 +21,26 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { justify, alignItems, directionRow } = flexProps;
+    const { alignItems } = flexProps;
 
     return (
       <AppBar className="navigation-bar" position="static" color="default">
         <Toolbar className="toolbar">
           <Grid container className="grid-container" alignItems={alignItems}>
-            <Grid item lg={5} xs={3}>
+            <Grid item xs={4}>
               <div className="navigation">
-                {isMobile ? <MobileMenu /> : <WebMenu />}
+                  <MenuDrawer {...this.props}/>
               </div>
             </Grid>
-            <Grid item lg={2} xs={6}>
+            <Grid item xs={4}>
               <div className="notifications">
                 <Notifications />
               </div>
             </Grid>
-            <Grid item lg={5} xs={3}>
-              <Profile />
+            <Grid item xs={4}>
+              <div className="profile">
+                <Profile />
+              </div>
             </Grid>
           </Grid>
         </Toolbar>
